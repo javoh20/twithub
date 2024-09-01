@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwitHub - Профиль пользователя</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>TwitHub</h1>
+        <nav>
+            <a href="index.html">Лента новостей</a>
+            <a href="profile.html">Мой профиль</a>
+            <a href="login.html">Войти</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="profile">
+            <div id="profile-header">
+                <form id="profile-picture-form">
+                    <label for="profile-picture">
+                        <img id="profile-picture-preview" src="default-avatar.png" alt="Профильная фотография">
+                        <input type="file" id="profile-picture" name="profile-picture" accept="image/*">
+                    </label>
+                </form>
+
+                <h2>Имя пользователя</h2>
+                <p id="profile-bio">Описание профиля</p>
+                <button id="edit-profile-button">Редактировать профиль</button>
+            </div>
+
+            <div id="edit-profile-form" style="display: none;">
+                <h2>Редактировать профиль</h2>
+                <form>
+                    <label for="edit-username">Имя пользователя:</label>
+                    <input type="text" id="edit-username" name="username" value="Имя пользователя" required>
+
+                    <label for="edit-bio">Описание профиля:</label>
+                    <textarea id="edit-bio" name="bio" rows="4" required>Описание профиля</textarea>
+
+                    <button type="submit">Сохранить изменения</button>
+                    <button type="button" id="cancel-edit-button">Отмена</button>
+                </form>
+            </div>
+
+            <div id="followers-following">
+                <h3>Подписчики и подписки</h3>
+                <div id="followers">
+                    <h4>Подписчики <a href="#" id="followers-link">1000</a></h4>
+                </div>
+                <div id="following">
+                    <h4>Подписки <a href="#" id="following-link">1000</a></h4>
+                </div>
+            </div>
+
+            <section id="user-tweets">
+                <h3>Мои твиты</h3>
+                <article class="tweet">
+                    <div class="tweet-header">
+                        <span class="username">Пользователь1</span>
+                        <span class="timestamp">2 ч. назад</span>
+                    </div>
+                    <p>Это пример твита в профиле!</p>
+                    <div class="tweet-actions">
+                        <button>Лайк</button>
+                        <button>Репост</button>
+                        <button>Комментарий</button>
+                    </div>
+                </article>
+                <!-- Добавьте больше твитов по мере необходимости -->
+            </section>
+        </section>
+
+        <!-- Модальные окна для подписчиков и подписок -->
+        <div id="modal-followers" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-followers">&times;</span>
+                <h2>Подписчики</h2>
+                <ul>
+                    <!-- Пример пользователей -->
+                    <li>
+                        <img src="default-avatar.png" alt="Аватар" class="modal-avatar">
+                        Пользователь1
+                    </li>
+                    <li>
+                        <img src="default-avatar.png" alt="Аватар" class="modal-avatar">
+                        Пользователь2
+                    </li>
+                    <!-- Добавьте больше пользователей по мере необходимости -->
+                </ul>
+            </div>
+        </div>
+
+        <div id="modal-following" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-following">&times;</span>
+                <h2>Подписки</h2>
+                <ul>
+                    <!-- Пример пользователей -->
+                    <li>
+                        <img src="default-avatar.png" alt="Аватар" class="modal-avatar">
+                        Пользователь1
+                    </li>
+                    <li>
+                        <img src="default-avatar.png" alt="Аватар" class="modal-avatar">
+                        Пользователь2
+                    </li>
+                    <!-- Добавьте больше пользователей по мере необходимости -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TwitHub</p>
+    </footer>
+
+    <script>
+        document.getElementById('edit-profile-button').addEventListener('click', function() {
+            document.getElementById('edit-profile-form').style.display = 'block';
+            document.getElementById('profile-header').style.display = 'none';
+        });
+
+        document.getElementById('cancel-edit-button').addEventListener('click', function() {
+            document.getElementById('edit-profile-form').style.display = 'none';
+            document.getElementById('profile-header').style.display = 'block';
+        });
+
+        document.getElementById('profile-picture').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-picture-preview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('followers-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('modal-followers').style.display = 'block';
+        });
+
+        document.getElementById('following-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('modal-following').style.display = 'block';
+        });
+
+        document.getElementById('close-followers').addEventListener('click', function() {
+            document.getElementById('modal-followers').style.display = 'none';
+        });
+
+        document.getElementById('close-following').addEventListener('click', function() {
+            document.getElementById('modal-following').style.display = 'none';
+        });
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>

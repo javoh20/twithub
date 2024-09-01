@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwitHub - Лента новостей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>TwitHub</h1>
+        <nav>
+            <a href="index.html">Лента новостей</a>
+            <a href="profile.html">Мой профиль</a>
+            <a href="login.html">Войти</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="tweet-form">
+            <textarea placeholder="Что у вас нового?" rows="3"></textarea>
+            <button type="submit">Твитнуть</button>
+        </section>
+
+        <section id="feed">
+            <article class="tweet">
+                <div class="tweet-header">
+                    <span class="username">Пользователь1</span>
+                    <span class="timestamp">1 мин. назад</span>
+                </div>
+                <p>Это пример твита!</p>
+                <div class="tweet-actions">
+                    <button>Лайк</button>
+                    <button>Репост</button>
+                    <button>Комментарий</button>
+                </div>
+            </article>
+            <!-- Добавьте больше твитов по мере необходимости -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TwitHub</p>
+    </footer>
+</body>
+</html>
