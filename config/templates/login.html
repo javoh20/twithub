@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TwitHub - Вход</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>TwitHub</h1>
-        <nav>
-            <a href="index.html">Лента новостей</a>
-            <a href="signup.html">Регистрация</a>
-        </nav>
-    </header>
+{% extends "base.html" %}
 
+{% block title %}
+    TwitHub - Вход
+{% endblock title %}
+
+{% block content %}
     <main>
         <section id="login">
             <h2>Вход</h2>
@@ -27,11 +17,9 @@
 
                 <button type="submit">Войти</button>
             </form>
+            <form>
+                <button style = "margin-top: 5px;"><a style = "text-decoration: none; color: white;" href = ''>Регистрация</a></button>
+            </form>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 TwitHub</p>
-    </footer>
-</body>
-</html>
+{% endblock content %}

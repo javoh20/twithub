@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TwitHub - Лента новостей</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>TwitHub</h1>
-        <nav>
-            <a href="index.html">Лента новостей</a>
-            <a href="profile.html">Мой профиль</a>
-            <a href="login.html">Войти</a>
-        </nav>
-    </header>
+{% extends "base.html" %}
 
+{% block title %}
+    TwitHub - Лента новостей
+{% endblock title %}
+
+{% block content %}
     <main>
         <section id="tweet-form">
             <textarea placeholder="Что у вас нового?" rows="3"></textarea>
@@ -38,9 +27,4 @@
             <!-- Добавьте больше твитов по мере необходимости -->
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 TwitHub</p>
-    </footer>
-</body>
-</html>
+{% endblock content %}

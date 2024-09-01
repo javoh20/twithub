@@ -93,7 +93,9 @@ form button:hover {
     background-color: #0d8bce;
 }
 
+
 /* Профиль */
+
 #profile {
     background: #fff;
     border-radius: 10px;
@@ -312,6 +314,8 @@ form button:hover {
 .close:hover {
     color: #f00;
 }
+
+
 
 /* Футер */
 footer {
