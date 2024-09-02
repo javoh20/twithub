@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TwitHub - Регистрация</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>TwitHub</h1>
-        <nav>
-            <a href="index.html">Лента новостей</a>
-            <a href="login.html">Войти</a>
-        </nav>
-    </header>
+{% extends "base.html" %}
+{% block title %} TwitHub - Регистрация {% endblock title %}
 
+{% block content %}
     <main>
         <section id="signup">
             <h2>Регистрация</h2>
@@ -35,9 +22,4 @@
             </form>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 TwitHub</p>
-    </footer>
-</body>
-</html>
+{% endblock content %}

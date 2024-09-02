@@ -6,10 +6,19 @@
 
 {% block content %}
     <main>
-        <section id="tweet-form">
-            <textarea placeholder="Что у вас нового?" rows="3"></textarea>
-            <button type="submit">Твитнуть</button>
+        <section id="search-bar">
+            <form action="" method="get">
+                <input type="text" name="q" placeholder="Поиск по твитам..." />
+                <button type="submit">Искать</button>
+            </form>
         </section>
+
+        {% if user.is_authenticated %}
+            <section id="tweet-form">
+                <textarea placeholder="Что у вас нового?" rows="3"></textarea>
+                <button type="submit">Твитнуть</button>
+            </section>
+        {% endif %}
 
         <section id="feed">
             <article class="tweet">

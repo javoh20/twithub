@@ -2,10 +2,13 @@ from django.shortcuts import render
 
 # Create your views here.
 def MainView(request):
-    return render(request, 'index.html')
+    context = {}
+    return render(request, 'index.html', context)
 
 def ProfileView(request):
-    return render(request, 'profile.html')
+    context = {}
+    return render(request, 'profile.html', context)
 
 def LoginView(request):
-    return render(request, 'login.html')
+    context = {}
+    return render(request, 'login.html', context)
