@@ -4,6 +4,7 @@ from django.views import View
 from django.contrib.auth import authenticate, login
 
 
+
 # Create your views here.
 class RegisterUserView(View):
     template_name = 'signup.html'
